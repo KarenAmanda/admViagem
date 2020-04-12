@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoTeste.Models;
+using ProjetoTeste.Models.ViewModels;
 
 namespace ProjetoTeste.Controllers
 {
