@@ -35,8 +35,9 @@ namespace ProjetoTeste
 
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMvc(options => options.EnableEndpointRouting = false);
-            services.AddDbContext<ProjetoTesteContext>(o => o.UseMySql("ConnectionString"));
-            
+            //services.AddDbContext<ProjetoTesteContext>(o => o.UseMySql("ConnectionString"));
+            services.AddDbContext<ProjetoTesteContext>(options => options.UseMySql(Configuration.GetConnectionString("ProjetoTesteContext"), builder => builder.MigrationsAssembly("ProjetoTeste")));
+
 
         }
 

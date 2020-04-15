@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoTeste.Models
 {
-    public class TravelRouteModel
+    public class TravelRoute
     {
         public int Id { get; set; }
         public string TypeOfRoute { get; set; }

@@ -5,14 +5,12 @@ using System.Threading.Tasks;
 
 namespace ProjetoTeste.Models
 {
-    public class AccommodationModel
+    public class Travel
     {
         public int Id { get; set; }
-        public string AccommodationName { get; set; }
-        public int QtdDays { get; set; }
-        public string Telephone { get; set; }
-        public int Value { get; set; }
+        public string Destiny { get; set; }
+        public DateTime DateGo{ get; set; }
+        public DateTime DateBack { get; set; }
         public int IdTravelRoute { get; set; }
-
     }
 }

@@ -14,6 +14,8 @@ namespace ProjetoTeste.Data
         {
         }
 
-        public DbSet<ProjetoTeste.Models.UserModel> UserModel { get; set; }
+        public DbSet<User> User { get; set; }
+
+
     }
 }

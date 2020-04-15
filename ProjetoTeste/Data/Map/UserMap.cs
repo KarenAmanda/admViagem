@@ -4,9 +4,9 @@ using ProjetoTeste.Models;
 
 namespace ProjetoTeste.Data.Map
 {
-    public class UserMap : IEntityTypeConfiguration<UserModel>
+    public class UserMap : IEntityTypeConfiguration<User>
     {
-        public void Configure(EntityTypeBuilder<UserModel> builder)
+        public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable("Usuario");
             builder.HasKey(c => c.Id);

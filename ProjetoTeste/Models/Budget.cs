@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace ProjetoTeste.Models
 {
-    public class TravelModel
+    public class Budget
     {
         public int Id { get; set; }
-        public string Destiny { get; set; }
-        public DateTime DateGo{ get; set; }
-        public DateTime DateBack { get; set; }
+        public string TypeOfBudget { get; set; }
+        public string Description { get; set; }
+        public int Valeu { get; set; }
         public int IdTravelRoute { get; set; }
     }
 }

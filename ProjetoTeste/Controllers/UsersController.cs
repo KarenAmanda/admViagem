@@ -22,7 +22,7 @@ namespace ProjetoTeste.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-            return View(await _context.UserModel.ToListAsync());
+            return View(await _context.User.ToListAsync());
         }
 
         // GET: Users/Details/5
@@ -33,7 +33,7 @@ namespace ProjetoTeste.Controllers
                 return NotFound();
             }
 
-            var userModel = await _context.UserModel
+            var userModel = await _context.User
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (userModel == null)
             {
@@ -54,7 +54,7 @@ namespace ProjetoTeste.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Email,Telephone,Birthday,IdTravelRoute")] UserModel userModel)
+        public async Task<IActionResult> Create([Bind("Id,Name,Email,Telephone,Birthday,IdTravelRoute")] User userModel)
         {
             if (ModelState.IsValid)
             {
@@ -73,7 +73,7 @@ namespace ProjetoTeste.Controllers
                 return NotFound();
             }
 
-            var userModel = await _context.UserModel.FindAsync(id);
+            var userModel = await _context.User.FindAsync(id);
             if (userModel == null)
             {
                 return NotFound();
@@ -86,7 +86,7 @@ namespace ProjetoTeste.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Email,Telephone,Birthday,IdTravelRoute")] UserModel userModel)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Email,Telephone,Birthday,IdTravelRoute")] User userModel)
         {
             if (id != userModel.Id)
             {
@@ -124,7 +124,7 @@ namespace ProjetoTeste.Controllers
                 return NotFound();
             }
 
-            var userModel = await _context.UserModel
+            var userModel = await _context.User
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (userModel == null)
             {
@@ -139,15 +139,15 @@ namespace ProjetoTeste.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var userModel = await _context.UserModel.FindAsync(id);
-            _context.UserModel.Remove(userModel);
+            var userModel = await _context.User.FindAsync(id);
+            _context.User.Remove(userModel);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UserModelExists(int id)
         {
-            return _context.UserModel.Any(e => e.Id == id);
+            return _context.User.Any(e => e.Id == id);
         }
     }
 }
